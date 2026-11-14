@@ -4,68 +4,125 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    color: #4b3b2b;
+    font-family: "Mocha Squishy", sans-serif;
+    background-color: #f2e9d9;
+    background-image: radial-gradient(#8b6c4520 1px, transparent 1px);
+    background-size: 12px 12px;
 }
 
 .site-header {
     width: 100%;
     padding: 1rem 2rem;
-    background-color: #fff;
-    border-bottom: 1px solid #e5e5e5;
+    background: linear-gradient(180deg, #dfc9a7, #cfb48b);
+    border-bottom: 4px solid #a5855b;
 }
 
 .site-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
+    padding: 0.6rem 0.8rem;
+    background-color: #faf4e8;
+    border: 2px solid #b5976d;
+    border-radius: 10px;
+    box-shadow: 0 3px 0 #b5976d;
 }
 
 .nav-logo {
     flex: 0 0 120px;
     height: 40px;
+    background-color: #fffaf0;
+    border: 1px dashed #c8b18d;
+    border-radius: 6px;
 }
 
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 0.6rem;
 }
 
 .site-nav a {
-    color: #222;
+    padding: 0.55rem 0.8rem;
+    color: #5b452f;
+    background-color: #eee1ca;
+    border: 1px solid #c5a980;
+    border-radius: 6px;
     font-size: 1rem;
     text-decoration: none;
+    box-shadow: 0 2px 0 #c5a980;
+}
+
+.site-nav a[aria-current="page"] {
+    color: #fffaf0;
+    background-color: #8b704b;
+    border-color: #725a3c;
+    box-shadow: 0 2px 0 #725a3c;
 }
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-    color: #666;
-    text-decoration: underline;
-    text-underline-offset: 0.25em;
+    color: #fffaf0;
+    background-color: #78815a;
+    border-color: #626b48;
+    box-shadow: 0 2px 0 #626b48;
+}
+
+.site-nav a:focus-visible {
+    outline: 2px solid #4b3b2b;
+    outline-offset: 3px;
 }
 
 .page-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3rem 2rem;
+    max-width: 1000px;
+    min-height: 260px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fffaf0;
+    border: 2px solid #d1b992;
+    border-radius: 12px;
+    box-shadow: 0 5px 14px #70563b24;
 }
 
-@media (max-width: 480px) {
+.page-content h1 {
+    margin-top: 0;
+    padding-bottom: 0.7rem;
+    color: #6b5034;
+    border-bottom: 2px solid #ddc9a7;
+    font-family: inherit;
+}
+
+@media (max-width: 600px) {
     .site-header {
-        padding: 1rem;
+        padding: 1rem 0.75rem;
     }
 
     .site-nav {
-        justify-content: space-between;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .nav-logo {
+        flex-basis: 52px;
     }
 
     .nav-links {
-        gap: 0.75rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 0.35rem;
+    }
+
+    .site-nav a {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.85rem;
     }
 
     .page-content {
-        padding: 2rem 1rem;
+        min-height: 220px;
+        margin: 1.25rem 0.75rem;
+        padding: 1.25rem;
     }
 }
