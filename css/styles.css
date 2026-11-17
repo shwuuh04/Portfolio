@@ -23,6 +23,7 @@
     --surface-soft: #f3f7f8;
     --line: #dfe9ec;
     --line-strong: #c2d4d8;
+    --project-card-border: #d3dfe2;
 }
 
 body {
@@ -102,7 +103,7 @@ a:focus-visible {
 .site-nav a:hover,
 .site-nav a:focus-visible {
     color: var(--white);
-    background: linear-gradient(to bottom, var(--teal), var(--teal-dark));
+    background: linear-gradient(to bottom, var(--teal-dark), var(--teal-deep));
     border-color: var(--teal);
 }
 
@@ -267,8 +268,8 @@ a:focus-visible {
 .home-button {
     display: inline-flex;
     padding: 0.75rem 1rem;
-    color: var(--surface);
-    background-color: var(--teal);
+    color: var(--charcoal);
+    background: linear-gradient(to bottom, var(--teal), var(--teal-dark));
     border: 1px solid var(--teal-dark);
     border-radius: 6px;
     font-weight: 700;
@@ -277,7 +278,8 @@ a:focus-visible {
 
 .home-button:hover,
 .home-button:focus-visible {
-    background-color: var(--teal-dark);
+    color: var(--white);
+    background: linear-gradient(to bottom, var(--teal-dark), var(--teal-deep));
 }
 
 .home-text-link {
@@ -285,6 +287,11 @@ a:focus-visible {
     font-weight: 700;
     text-decoration: underline;
     text-underline-offset: 0.2em;
+}
+
+.home-text-link:hover,
+.home-text-link:focus-visible {
+    color: var(--teal);
 }
 
 .home-visual {
@@ -386,7 +393,7 @@ a:focus-visible {
 
 .resume-download:hover,
 .resume-download:focus-visible {
-    background-color: var(--teal);
+    background: linear-gradient(to bottom, var(--teal-dark), var(--teal-deep));
     border-color: var(--teal-dark);
 }
 
@@ -440,7 +447,7 @@ a:focus-visible {
     flex-direction: column;
     overflow: hidden;
     background-color: var(--surface-soft);
-    border: 2px solid var(--line);
+    border: 2px solid var(--project-card-border);
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(var(--charcoal-rgb), 0.08);
 }
@@ -452,8 +459,16 @@ a:focus-visible {
     place-items: center;
     color: var(--charcoal);
     background: linear-gradient(135deg, var(--surface-soft), var(--line));
-    border: 1px dashed var(--line-strong);
+    border: 1px solid var(--line-strong);
     border-radius: 6px;
+}
+
+.project-card__thumbnail img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 .project-card__thumbnail span {
@@ -507,15 +522,14 @@ a:focus-visible {
 }
 
 .project-card-link {
-    display: block;
+    display: flex;
     color: inherit;
     border-radius: 10px;
     text-decoration: none;
 }
 
-.project-card-link:hover .project-card {
-    box-shadow: 0 6px 14px rgba(var(--charcoal-rgb), 0.12);
-    transform: translateY(-2px);
+.project-card-link .project-card {
+    flex: 1;
 }
 
 .case-study__back {
